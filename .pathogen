@@ -1,0 +1,199 @@
+"put below line on top of your ~/.vimrc
+"execute pathogen#infect()
+"call pathogen#helptags() "If you like to get crazy :)
+" If you don't like to get crazy, only call :Helptags when you need to.
+" Plugins are then added to ~/vim/bundle.
+
+
+"unicode.vim, https://github.com/chrisbra/unicode.vim.git
+cd ~/.vim/bundle && git clone https://github.com/chrisbra/unicode.vim.git
+
+"pathogen, https://github.com/tpope/vim-pathogen
+mkdir -p ~/.vimundo ~/.vimswap ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+"vim-unimpaired, https://github.com/tpope/vim-unimpaired
+cd ~/.vim/bundle && git clone https://github.com/tpope/vim-unimpaired
+cd ~/.vim/bundle && git clone https://github.com/tpope/vim-repeat
+cd ~/.vim/bundle && git clone https://github.com/tpope/vim-surround
+cd ~/.vim/bundle && git clone https://github.com/tpope/vim-eunuch       # Vim sugar for the UNIX shell commands that need it the most.
+cd ~/.vim/bundle && git clone https://github.com/tpope/vim-fugitive     # "git, "CVS, "VCS
+cd ~/.vim/bundle && git clone https://github.com/tpope/vim-endwise
+cd ~/.vim/bundle && git clone https://github.com/tpope/vim-vinegar      # vinegar.vim: combine with netrw to create a delicious salad dressing 
+cd ~/.vim/bundle && git clone https://github.com/tpope/vim-sensible
+cd ~/.vim/bundle && git clone https://github.com/tpope/vim-dispatch
+cd ~/.vim/bundle && git clone https://github.com/vim-utils/vim-man
+cd ~/.vim/bundle && git clone https://github.com/jez/vim-superman
+http://www.vim.org/scripts/script.php?script_id=4582  https://github.com/vim-scripts/Conque-GDB
+http://blog.csdn.net/demorngel/article/details/73008059
+
+"essential, see "" ls
+"
+"scripting, see "" ls
+cd ~/.vim/bundle && git clone https://github.com/LucHermitte/lh-vim-lib
+    eg, lh#list#accumulate2
+
+"html, see " markdown " js
+cd ~/.vim/bundle && git clone https://github.com/mattn/emmet-vim.git
+
+vim目录autoload下自带js的 插件 (javascriptcomplete.vim)
+/usr/share/vim/vim80/autoload/javascriptcomplete.vim
+"js, see " html
+cd ~/.vim/bundle && git clone https://github.com/pangloss/vim-javascript
+tern: code analyzer https://github.com/ternjs/tern  http://ternjs.net/
+tern_for_vim https://github.com/ternjs/tern_for_vim
+fix error by modify path at ~/.vim/bundle/tern_for_vim/autoload/tern.vim:15 https://github.com/ternjs/tern_for_vim/issues/91#issuecomment-110366585
+VIM的JavaScript补全 2015-05-05 http://efe.baidu.com/blog/vim-javascript-completion/
+flow: A static type checker for javascript https://www.tuicool.com/articles/vqeUVzu  https://flow.org/
+Babel plugin for static and runtime type checking using Flow and tcomb. https://github.com/gcanti/babel-plugin-tcomb
+
+"css, see " html
+
+"doc
+" broken
+cd ~/.vim/bundle && git clone https://github.com/powerman/vim-plugin-viewdoc
+
+" *:CtrlPBufTag*
+" *:CtrlPDir*
+" *:CtrlPQuickfix*
+" *:CtrlPBookmarkDir* *:CtrlPBookmarkDirAdd*
+" *:CtrlPUndo*
+" *:CtrlPLine*
+" *:CtrlPChange* *:CtrlPChangeAll*
+" ctrlp vs Command-T  https://news.ycombinator.com/item?id=4219865
+" Command-T depends on ruby
+"ctrlp, "buffer management
+cd ~/.vim/bundle && git clone https://github.com/ctrlpvim/ctrlp.vim.git ctrlp.vim
+cd ~/.vim/bundle && git clone https://github.com/mileszs/ack.vim.git ~/.vim/bundle/ack.vim
+ctrlp alternative https://github.com/Yggdroot/LeaderF from https://www.v2ex.com/t/297708
+cd ~/.vim/bundle && git clone https://github.com/wincent/Command-T
+" Unite.vim show cases.  http://bling.github.io/blog/2013/06/02/unite-dot-vim-the-plugin-you-didnt-know-you-need/
+"mc
+cd ~/.vim/bundle && git clone https://github.com/Shougo/denite.nvim       # vim8 + python3
+
+"markdown
+cd ~/.vim/bundle && git clone https://github.com/gabrielelana/vim-markdown
+cd ~/.vim/bundle && git clone https://github.com/godlygeek/tabular
+cd ~/.vim/bundle && git clone https://github.com/plasticboy/vim-markdown
+
+"vim-easymotion
+cd ~/.vim/bundle && git clone https://github.com/easymotion/vim-easymotion   ~/.vim/bundle/vim-easymotion
+rm -rf ~/.vim/bundle/vim-easymotion
+
+"cms(comment), see " syntax
+"tComment, https://github.com/tomtom/tcomment_vim
+cd ~/.vim/bundle && git clone https://github.com/tomtom/tcomment_vim.git
+rm -rf ~/.vim/bundle/tcomment_vim/
+"nerd-commenter, https://github.com/scrooloose/nerdcommenter
+" commentary.vim, https://github.com/tpope/vim-commentary
+cd ~/.vim/bundle && git clone https://github.com/tpope/vim-commentary.git
+rm -rf ~/.vim/bundle/vim-commentary/
+
+UltiSnips and YouCompleteMe interfering?  https://stackoverflow.com/questions/14896327/ultisnips-and-youcompleteme
+"syntax(syntastic), see " comment " snippet
+vim-syntastic   https://github.com/vim-syntastic/syntastic
+YouCompleteMe   https://github.com/Valloric/YouCompleteMe
+Vim YouCompleteMe for Windows https://bitbucket.org/Alexander-Shukaev/vim-youcompleteme-for-windows
+based on clang/LLVM  http://clang.llvm.org/
+NOTE: The regex syntax is NOT Vim's, it's Python's.
+Vim自动补全插件----YouCompleteMe安装与配置  http://www.cnblogs.com/zhongcq/p/3630047.html
+还有一个原因是没有大牛来做这些功能。在漫长的Vim或emacs历史中，它都是掌握在少数精英程序员手里，扩展它都需要一定的专业知识，我辈普通程序员只是在使用它。而代码补全并不是大牛们的必须，我曾经和一个瑞典的PSE做Pair Programming, 只使用emacs和grep等linux命令，他就可以在整个工程里穿梭自如，常用库的调用了然于心，代码结构清晰，几乎没有语法和拼写错误。估计他看到我花里胡哨的vim, 还用代码提示，心里也是一阵鄙视吧。所以尽管大牛们让emacs可以煮咖啡，vim可以发微博，但是vim和emacs的代码提示一如既往的烂了二三十年。   vim中的杀手级插件: YouCompleteMe  http://zuyunfei.com/2013/05/16/killer-plugin-of-vim-youcompleteme/
+
+# "NERDTree, https://github.com/scrooloose/nerdtree
+cd ~/.vim/bundle && git clone https://github.com/scrooloose/nerdtree.git
+
+"text-object
+" kana/vim-textobj-entire, https://github.com/kana/vim-textobj-entire
+cd ~/.vim/bundle && git clone https://github.com/kana/vim-textobj-entire.git
+rm -rf ~/.vim/bundle/vim-textobj-entire/
+
+"vim-easyclip, https://github.com/svermeulen/vim-easyclip
+
+"operator
+"vim-operator-user, https://github.com/kana/vim-operator-user
+cd ~/.vim/bundle && git clone https://github.com/kana/vim-operator-user.git
+
+"open-browser.vim, https://github.com/tyru/open-browser.vim
+"https://github.com/tyru/open-browser.vim.git
+
+# "vim-quickrun, https://github.com/thinca/vim-quickrun
+
+# "bash-support.vim, https://github.com/vim-scripts/bash-support.vim
+cd ~/.vim/bundle && git clone https://github.com/vim-scripts/bash-support.vim
+
+# "vim-ps1, "ps1, "powershell, https://github.com/PProvost/vim-ps1
+cd ~/.vim/bundle && git clone https://github.com/PProvost/vim-ps1.git
+
+# "pymode, 
+cd ~/.vim/bundle && git clone https://github.com/klen/python-mode.git
+rm -rf ~/.vim/bundle/python-mode
+rm ~/.vim/after/ftplugin/python.vim
+rm ~/.vim/after/indent/python.vim
+
+# "pydoc, (ftplugin) https://github.com/fs111/pydoc.vim
+"git clone https://github.com/fs111/pydoc.vim/tree/master/ftplugin   ~/.vim/ftplugin/python/pymode.vim
+
+# "tpope, "Tim Pope, 
+# "vim-vinegar, https://github.com/tpope/vim-vinegar
+cd ~/.vim/bundle && git clone https://github.com/tpope/vim-vinegar.git
+# "scriptease.vim, https://github.com/tpope/vim-scriptease
+cd ~/.vim/bundle && git clone https://github.com/tpope/vim-scriptease.git
+# "projectionist.vim, https://github.com/tpope/vim-projectionist
+cd ~/.vim/bundle && git clone https://github.com/tpope/vim-projectionist.git
+
+cd ~/.vim/bundle && git clone
+"ls, see " essential " scripting
+    " mc " completion " snippet
+    " code " lang " library
+
+cd ~/.vim/bundle && git clone https://github.com/Shougo/deoplete.nvim
+"completion, see "" ls " snippet
+    " js
+YouCompleteMe   https://github.com/Valloric/YouCompleteMe#why-isnt-ycm-just-written-in-plain-vimscript-ffs
+deoplete        https://github.com/Shougo/deoplete.nvim
+neocomplete     https://github.com/Shougo/neocomplete.vim
+As far as I know deoplete doesnt support vim yet.  https://www.reddit.com/r/vim/comments/5w6wac/vim_users_of_reddit_whats_your_favorite/de7qrt7/
+(NCM) 比 deoplete 更快！比 YCM 更轻！支持 neovim/vim8 的自动补全框架！ https://www.v2ex.com/t/344868
+nvim-completion-manager https://github.com/roxma/nvim-completion-manager
+VimCompletesMe
+MUcomplete
+Omnicomplete
+https://www.reddit.com/r/vim/comments/6zgi34/what_are_the_differences_between_vimcompletesme/
+completor       https://github.com/maralla/completor.vim
+asyncomplete    https://github.com/prabirshrestha/asyncomplete.vim
+
+"TypeScript, see "" lang
+cd ~/.vim/bundle && git clone https://github.com/leafgarland/typescript-vim
+# https://www.reddit.com/r/vim/comments/4iggaj/vim_and_typescript/
+
+"lang, see "" ls " code
+    " TypeScript
+流行的语言一般都有对应的 vim 插件。例如 python 可以用 jedi-vim，golang 有 vim-go
+
+"code, see "" ls " lang
+Asynchronous Lint Engine Build Status  https://github.com/w0rp/ale
+
+code snippet/template
+# "snippet, "template, see " syntax
+# "vim-snipmate,
+cd ~/.vim/bundle && git clone https://github.com/SirVer/ultisnips.git
+cd ~/.vim/bundle && git clone https://github.com/garbas/vim-snipmate.git
+cd ~/.vim/bundle && git clone https://github.com/honza/vim-snippets.git && git clone https://github.com/MarcWeber/vim-addon-mw-utils.git
+
+"latex
+compare alternatives https://github.com/lervag/vimtex#alternatives
+cd ~/.vim/bundle && git clone https://github.com/vim-latex/vim-latex
+cd ~/.vim/bundle && git clone https://github.com/lervag/vimtex
+
+"library, see "" ls
+cd ~/.vim/bundle && git clone https://github.com/LucHermitte/lh-vim-lib
+
+# " vim -u NONE -c "helptags vim-someplugin/doc" -c q
+
+# "Article series "Vim Plugins You Should Know About"
+# "http://www.catonmat.net/series/vim-plugins-you-should-know-about
+# "list, list of popular vim plugins
+# http://vimawesome.com/
+
+# rm -rf ~/.vim/bundle/
+# cd ~/.vim/bundle && git clone 
+# cd ~/.vim/bundle; 
+# " %s=^cd \~/.vim/bundle; git=cd \~/.vim/bundle \&\& git=

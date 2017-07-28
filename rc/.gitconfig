@@ -1,0 +1,15 @@
+[user]
+	email = qeatzy@users.noreply.github.com
+	name = qeatzy
+[alias]
+	last = log -1 HEAD
+	st = status
+	ci = commit
+	br = branch
+	co = checkout
+	shoot = push origin --delete
+[credential]
+	helper = cache
+[push]
+	default = simple
+# copied from ~/.gitconfig
